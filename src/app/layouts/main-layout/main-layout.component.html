@@ -1,307 +1,308 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./navbar.css" />
-    <link rel="stylesheet" href="./home.css" />
-    <link rel="stylesheet" href="./about.css" />
-    <link rel="stylesheet" href="./service.css" />
-    <link rel="stylesheet" href="./skill.css" />
-    <link rel="stylesheet" href="./team.css" />
-    <link rel="stylesheet" href="./contact.css" />
-    <link rel="stylesheet" href="./footer.css" />
-    <link rel="stylesheet" href="./backtop.css" /> -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
-
-    <title>My Blog</title>
-  </head>
-  <body>
-    <a href="#home" class="backtop"><i class="fas fa-angle-up"></i></a>
-    <!-- . class,# id, > component, * quantity -->
-    <nav class="navbar">
-      <div class="max-width">
-        <div class="logo">
-          <a href="#">Bao<span>ray</span></a>
-        </div>
-        <ul class="menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="menu-btn">
-          <i class="fas fa-bars"></i>
-        </div>
+<a href="#home" class="backtop"><i class="fas fa-angle-up"></i></a>
+<!-- . class,# id, > component, * quantity -->
+<nav class="custom-nav">
+  <div class="max-width">
+    <div class="logo">
+      <a href="#">Bao<span>ray</span></a>
+    </div>
+    <ul class="menu">
+      <li *ngFor="let nav of navItems">
+        <a href="{{nav.id}}">{{nav.label}}</a>
+      </li>
+    </ul>
+    <div class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</nav>
+<!-- section home -->
+<section class="home" id="home">
+  <div class="max-width">
+    <div class="home-content">
+      <div class="column left">
+        <div class="text-1">Hello, my name is</div>
+        <div class="text-2">Thai Bao</div>
+        <div class="text-3">And I am a <span class="typing"></span></div>
+        <a href="#">Hire me</a>
       </div>
-    </nav>
-    <!-- section home -->
-    <section class="home" id="home">
-      <div class="max-width">
-        <div class="home-content">
-          <div class="column left">
-            <div class="text-1">Hello, my name is</div>
-            <div class="text-2">Bao Ray</div>
-            <div class="text-3">And I am a <span class="typing"></span></div>
-            <a href="#">Hire me</a>
-          </div>
-          <div class="column right">
-          </div>
-        </div>
+      <div class="column right">
       </div>
-    </section>
-    <!-- section about -->
-    <section class="about" id="about">
-      <div class="max-width">
-        <h2 class="title">About me</h2>
-        <div class="about-content">
-          <div class="column left">
-            <img src="./images/test3.jpg" alt="avt" />
-          </div>
-          <div class="column right">
-            <div class="text">I am Bao, and I'm a <span>Programmer</span></div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              deserunt explicabo similique voluptatum excepturi hic laborum
-              tenetur ea possimus magni impedit tempore dolor, nam vitae
-              sapiente nemo fuga sit commodi?
-            </p>
-            <a href="#">Download CV</a>
-          </div>
-        </div>
+    </div>
+  </div>
+</section>
+<!-- section about -->
+<section class="about" id="about">
+  <div class="max-width">
+    <h2 class="title">About me</h2>
+    <div class="about-content">
+      <div class="column left">
+        <img src="../../../assets/images/449718840_2791981084303890_5461302904723480193_n.jpg" alt="avt" />
       </div>
-    </section>
-    <!-- section services  -->
-    <section class="services" id="services">
-      <div class="max-width">
-        <h2 class="title">My services</h2>
-        <div class="serv-content">
-          <div class="card">
-            <div class="box">
-              <i class="fas fa-paint-brush"></i>
-              <div class="text">Web Design</div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                obcaecati nesciunt sapiente corrupti in sed odit alias
-                explicabo! Itaque sapiente minima rerum. Rem id pariatur
-                asperiores iusto minima facere veritatis.
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="box">
-              <i class="fas fa-chart-line"></i>
-              <div class="text">Adversiting</div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                obcaecati nesciunt sapiente corrupti in sed odit alias
-                explicabo! Itaque sapiente minima rerum. Rem id pariatur
-                asperiores iusto minima facere veritatis.
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="box">
-              <i class="fas fa-code"></i>
-              <div class="text">Apps Design</div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                obcaecati nesciunt sapiente corrupti in sed odit alias
-                explicabo! Itaque sapiente minima rerum. Rem id pariatur
-                asperiores iusto minima facere veritatis.
-              </p>
-            </div>
-          </div>
+      <div class="column right">
+        <div class="text">I am Bao, and I'm a <span class="text-crimson">Frontend developer</span></div>
+        <div class="d-flex justify-content-between align-items-center">
+          <b>Bio</b>
+          <p></p>
         </div>
-      </div>
-    </section>
-    <!-- section skills  -->
-    <section class="skills" id="skills">
-      <div class="max-width">
-        <h2 class="title">My skills</h2>
-        <div class="skill-content">
-          <div class="column left">
-            <div class="text">My craetive skills & expriences.</div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-              dolores deserunt debitis nam. Sint consequuntur culpa recusandae,
-              alias perspiciatis architecto repellendus earum odit, ipsa aperiam
-              quidem cumque, quisquam esse illum!
-            </p>
-            <a href="#">Read more</a>
-          </div>
-          <div class="column right">
-            <div class="bars">
-              <div class="info">
-                <span> HTML </span>
-                <span>30%</span>
-              </div>
-              <div class="line html"></div>
-            </div>
-            <div class="bars">
-              <div class="info">
-                <span> CSS </span>
-                <span>30%</span>
-              </div>
-              <div class="line css"></div>
-            </div>
-            <div class="bars">
-              <div class="info">
-                <span> React </span>
-                <span>20%</span>
-              </div>
-              <div class="line react"></div>
-            </div>
-          </div>
+        <hr>
+        <div class="d-flex justify-content-between align-items-center">
+          <b>Email</b>
+          <a href="#" class="text-crimson">lethaibao.201@gmail.com</a>
         </div>
-      </div>
-    </section>
-    <!-- section team  -->
-    <section class="team" id="team">
-      <div class="max-width">
-        <h2 class="title">My Team</h2>
-        <div class="carousel owl-carousel">
-          <div class="card">
-            <div class="box">
-              <img src="./images/tanle.jpg" alt="team1" />
-              <div class="text">Pro Tanle</div>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
-                impedit vero. Nobis, maxime hic. Harum soluta officiis corporis
-                quae dolorem odit laboriosam saepe. Error assumenda sit culpa
-                impedit tempore ab.
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="box">
-              <img src="./images/nigga.jpg" alt="team2" />
-              <div class="text">Nigga</div>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
-                impedit vero. Nobis, maxime hic. Harum soluta officiis corporis
-                quae dolorem odit laboriosam saepe. Error assumenda sit culpa
-                impedit tempore ab.
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="box">
-              <img src="./images/test3.jpg" alt="team3" />
-              <div class="text">Bao Ray</div>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
-                impedit vero. Nobis, maxime hic. Harum soluta officiis corporis
-                quae dolorem odit laboriosam saepe. Error assumenda sit culpa
-                impedit tempore ab.
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="box">
-              <img src="./images/khi.jpg" alt="team1" />
-              <div class="text">Kien Ngu</div>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
-                impedit vero. Nobis, maxime hic. Harum soluta officiis corporis
-                quae dolorem odit laboriosam saepe. Error assumenda sit culpa
-                impedit tempore ab.
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="box">
-              <img src="./images/fusdu.jpg" alt="team1" />
-              <div class="text">Black Tits</div>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
-                impedit vero. Nobis, maxime hic. Harum soluta officiis corporis
-                quae dolorem odit laboriosam saepe. Error assumenda sit culpa
-                impedit tempore ab.
-              </p>
-            </div>
-          </div>
+        <hr>
+        <div class="d-flex justify-content-between align-items-center">
+          <b>Instagram</b>
+          <a href="https://www.instagram.com/justbiny/?hl=vi" class="text-crimson">justbiny</a>
         </div>
-      </div>
-    </section>
-    <!-- section contact  -->
-    <section class="contact" id="contact">
-      <div class="max-width">
-        <h2 class="title">Contact me</h2>
-        <div class="contact-content">
-          <div class="column left">
-            <div class="left up">
-              <div class="text">Get in touch</div>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Tempore fugit reiciendis natus eaque distinctio! Dolor corporis
-                magnam, est cumque magni, nemo dolore nesciunt vitae optio unde
-                culpa molestias, at autem.
-              </p>
-            </div>
-            <div class="left down">
-              <ul class="content">
-                <li>
-                  <i class="fas fa-user-alt"></i>
-                  <div class="prop">
-                    <div class="textt">Name</div>
-                    <p>Bao Ray</p>
-                  </div>
-                </li>
-                <li>
-                  <i class="fas fa-map-marker-alt"></i>
-                  <div class="prop">
-                    <div class="textt">Place</div>
-                    <p>24 Hoa Son 3 st, Hai Chau district, Da Nang</p>
-                  </div>
-                </li>
-                <li>
-                  <i class="fas fa-envelope"></i>
-                  <div class="prop">
-                    <div class="textt">Email</div>
-                    <p>bao.ray1999@gmail.com</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="column right">
-            <div class="text">Message me</div>
-            <div class="email">
-              <input type="text" readonly value="bao.ray1999" />
-              <input type="text" readonly value="@gmail.com" />
-            </div>
-            <div class="message">
-              <input type="text" readonly value="Message" />
-            </div>
-            <textarea cols="30" rows="3" readonly>Hello!</textarea>
-            <a href="#">Send message</a>
-          </div>
+        <hr>
+        <div class="d-flex justify-content-between align-items-center">
+          <b>Linkedin</b>
+          <a href="https://www.instagram.com/justbiny/?hl=vi" class="text-crimson">justbiny</a>
         </div>
+        <hr>
+        <div class="d-flex justify-content-between align-items-center">
+          <b><i class="fa-solid fa-school mr-2"></i>Educations</b>
+        </div>
+        <div>
+          <strong><span class="text-crimson">Information Technology (Software Engineering)</span> </strong> | Danang University of Technology, Viet Nam
+          <p class="mb-0">2017 - 2022</p>
+          <em class="text-muted">GPA: 3.2/4.0</em>
+        </div>
+        <br>
+        <div>
+          <strong><span class="text-crimson">Certificate of High School Graduation</span> </strong> | Quang Trung highschool, Viet Nam
+          <p class="mb-0">2014 - 2017</p>
+          <em class="text-muted">GPA: 8.0/10</em>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between align-items-center">
+          <b><i class="fa-solid fa-location-dot mr-2"></i>Location</b>
+        </div>
+        <div>
+          <em class="text-muted">Da Nang, Viet Nam</em>
+        </div>
+        <a href="#" class="btn">Download CV</a>
       </div>
-    </section>
-    <!-- footer  -->
-    <div class="footer">
-      <div class="max-width">
-        <div class="content">
+    </div>
+  </div>
+</section>
+<!-- section services  -->
+<section class="services" id="services">
+  <div class="max-width">
+    <h2 class="title">My services</h2>
+    <div class="serv-content">
+      <div class="card">
+        <div class="box">
+          <i class="fas fa-paint-brush"></i>
+          <div class="text">Web Design</div>
           <p>
-            Created By <span><a href="#">BaoRay</a></span> | 2020 All rights
-            reserved
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+            obcaecati nesciunt sapiente corrupti in sed odit alias
+            explicabo! Itaque sapiente minima rerum. Rem id pariatur
+            asperiores iusto minima facere veritatis.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="box">
+          <i class="fas fa-chart-line"></i>
+          <div class="text">Adversiting</div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+            obcaecati nesciunt sapiente corrupti in sed odit alias
+            explicabo! Itaque sapiente minima rerum. Rem id pariatur
+            asperiores iusto minima facere veritatis.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="box">
+          <i class="fas fa-code"></i>
+          <div class="text">Apps Design</div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+            obcaecati nesciunt sapiente corrupti in sed odit alias
+            explicabo! Itaque sapiente minima rerum. Rem id pariatur
+            asperiores iusto minima facere veritatis.
           </p>
         </div>
       </div>
     </div>
-    <script src="./index.js"></script>
-  </body>
-</html>
+  </div>
+</section>
+<!-- section skills  -->
+<section class="skills" id="skills">
+  <div class="max-width">
+    <h2 class="title">My skills</h2>
+    <div class="skill-content">
+      <div class="column left">
+        <div class="text">My craetive skills & expriences.</div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+          dolores deserunt debitis nam. Sint consequuntur culpa recusandae,
+          alias perspiciatis architecto repellendus earum odit, ipsa aperiam
+          quidem cumque, quisquam esse illum!
+        </p>
+        <a href="#">Read more</a>
+      </div>
+      <div class="column right">
+        <div class="bars">
+          <div class="info">
+            <span> HTML </span>
+            <span>30%</span>
+          </div>
+          <div class="line html"></div>
+        </div>
+        <div class="bars">
+          <div class="info">
+            <span> CSS </span>
+            <span>30%</span>
+          </div>
+          <div class="line css"></div>
+        </div>
+        <div class="bars">
+          <div class="info">
+            <span> React </span>
+            <span>20%</span>
+          </div>
+          <div class="line react"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- section team  -->
+<section class="team" id="team">
+  <div class="max-width">
+    <h2 class="title">My Team</h2>
+    <div class="carousel owl-carousel">
+      <div class="card">
+        <div class="box">
+          <img src="./images/tanle.jpg" alt="team1" />
+          <div class="text">Pro Tanle</div>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
+            impedit vero. Nobis, maxime hic. Harum soluta officiis corporis
+            quae dolorem odit laboriosam saepe. Error assumenda sit culpa
+            impedit tempore ab.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="box">
+          <img src="./images/nigga.jpg" alt="team2" />
+          <div class="text">Nigga</div>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
+            impedit vero. Nobis, maxime hic. Harum soluta officiis corporis
+            quae dolorem odit laboriosam saepe. Error assumenda sit culpa
+            impedit tempore ab.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="box">
+          <img src="./images/test3.jpg" alt="team3" />
+          <div class="text">Bao Ray</div>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
+            impedit vero. Nobis, maxime hic. Harum soluta officiis corporis
+            quae dolorem odit laboriosam saepe. Error assumenda sit culpa
+            impedit tempore ab.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="box">
+          <img src="./images/khi.jpg" alt="team1" />
+          <div class="text">Kien Ngu</div>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
+            impedit vero. Nobis, maxime hic. Harum soluta officiis corporis
+            quae dolorem odit laboriosam saepe. Error assumenda sit culpa
+            impedit tempore ab.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="box">
+          <img src="./images/fusdu.jpg" alt="team1" />
+          <div class="text">Black Tits</div>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
+            impedit vero. Nobis, maxime hic. Harum soluta officiis corporis
+            quae dolorem odit laboriosam saepe. Error assumenda sit culpa
+            impedit tempore ab.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- section contact  -->
+<section class="contact" id="contact">
+  <div class="max-width">
+    <h2 class="title">Contact me</h2>
+    <div class="contact-content">
+      <div class="column left">
+        <div class="left up">
+          <div class="text">Get in touch</div>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Tempore fugit reiciendis natus eaque distinctio! Dolor corporis
+            magnam, est cumque magni, nemo dolore nesciunt vitae optio unde
+            culpa molestias, at autem.
+          </p>
+        </div>
+        <div class="left down">
+          <ul class="content">
+            <li>
+              <i class="fas fa-user-alt"></i>
+              <div class="prop">
+                <div class="textt">Name</div>
+                <p>Bao Ray</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="prop">
+                <div class="textt">Place</div>
+                <p>24 Hoa Son 3 st, Hai Chau district, Da Nang</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <div class="prop">
+                <div class="textt">Email</div>
+                <p>bao.ray1999@gmail.com</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="column right">
+        <div class="text">Message me</div>
+        <div class="email">
+          <input type="text" readonly value="bao.ray1999" />
+          <input type="text" readonly value="@gmail.com" />
+        </div>
+        <div class="message">
+          <input type="text" readonly value="Message" />
+        </div>
+        <textarea cols="30" rows="3" readonly>Hello!</textarea>
+        <a href="#">Send message</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- footer  -->
+<div class="footer">
+  <div class="max-width">
+    <div class="content">
+      <p>
+        Created By <span><a href="#">BaoRay</a></span> | 2020 All rights
+        reserved
+      </p>
+    </div>
+  </div>
+</div>
