@@ -7,26 +7,6 @@ section {
     padding: 100px 0;
 }
 
-.about,
-.services,
-.skills,
-.team,
-.contact,
-.footer {
-    font-family: "Poppins", sans-serif;
-}
-
-.home .home-content,
-.about .about-content,
-.services .serv-content,
-.skills .skill-content,
-.contact-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-}
-
 section .title {
     position: relative;
     text-align: center;
@@ -61,8 +41,192 @@ section .title::after {
     transform: translateX(-50%);
 }
 
-/* about section styling */
+.about,
+.ability,
+.skills,
+.timeline,
+.team,
+.contact,
+.footer {
+    font-family: "Poppins", sans-serif;
+}
 
+.home .home-content,
+.about .about-content,
+.ability .ability-content,
+.skills .skill-content,
+.timeline .timeline-content,
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* backtop button styling */
+.backtop {
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    bottom: 10px;
+    right: 30px;
+    background: crimson;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+    color: white;
+    text-decoration: none;
+}
+
+.backtop i {
+    font-size: 30px;
+}
+
+.backtop.show {
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* custom-nav styling */
+.custom-nav {
+    position: fixed;
+    width: 100%;
+    padding: 30px 0;
+    /* background: black; */
+    font-family: "Ubuntu", sans-serif;
+    z-index: 999;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+}
+
+/* roll là sẽ nhỏ lại thanh nav */
+.custom-nav.sticky {
+    padding: 15px 0;
+    background: crimson;
+}
+
+.custom-nav .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.custom-nav .logo a {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.custom-nav .logo a span {
+    color: crimson;
+}
+
+.custom-nav.sticky .logo a span {
+    color: #fff;
+}
+
+.custom-nav .menu {
+    margin-bottom: 0;
+}
+
+.custom-nav .menu li {
+    list-style: none;
+    display: inline-block;
+}
+
+.custom-nav .menu li a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+
+.custom-nav .menu li a:hover {
+    color: crimson;
+}
+
+.custom-nav.sticky .menu li a:hover {
+    color: black;
+}
+
+/* menu btn styling */
+.menu-btn {
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+/* home-section styling */
+.home {
+    background: black;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.home .max-width {
+    height: 100%;
+}
+
+.home .home-content {
+    height: 100%;
+    align-items: center;
+}
+
+.home .home-content .column {
+    width: calc(50% - 20px);
+}
+
+.home .home-content .text-1 {
+    font-size: 27px;
+    width: 100%;
+}
+
+.home .home-content .text-2 {
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+
+.home .home-content .text-3 {
+    font-size: 40px;
+    margin: 5px 0;
+}
+
+.home .home-content .text-3 span {
+    color: crimson;
+    font-weight: 600;
+}
+
+.home .home-content a {
+    display: inline-block;
+    background: crimson;
+    color: #fff;
+    font-size: 25px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+
+.home .home-content a:hover {
+    color: crimson;
+    background: none;
+}
+
+/* about section styling */
 .about .about-content .left {
     width: 45%;
 }
@@ -114,36 +278,245 @@ section .title::after {
     content: "Who am I";
 }
 
-.backtop {
-    position: fixed;
-    width: 45px;
-    height: 45px;
-    bottom: 10px;
-    right: 30px;
+/* ability section styling */
+.ability {
+    background: black;
+    color: white;
+}
+
+.ability .title::before {
+    background: white;
+}
+
+.ability .title::after {
+    background: black;
+    content: "What i have/can";
+}
+
+.ability .ability-content .card {
+    width: calc(33% - 20px);
+    /* calc dung de set width hoac height cho div con -20px la dich sang trai 20px */
+    background: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 20px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 260px;
+}
+
+.ability .ability-content .card:hover {
     background: crimson;
-    border-radius: 50%;
+}
+
+.ability .ability-content .card i {
+    font-size: 50px;
+    color: crimson;
+    transition: color 0.3s ease;
+}
+
+.ability .ability-content .card:hover i {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.ability .ability-content .card .text {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+.ability .ability-content .card:hover .box {
+    transform: scale(1.05);
+}
+
+.ability .ability-content .card .box {
+    transition: all 0.3s ease;
+}
+
+/* skills section styling */
+.skills .title::after {
+    content: "What i know";
+}
+
+.skills .skill-content .column {
+    width: calc(50% - 30px);
+}
+
+.skills .skill-content .left .text {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.skills .skill-content .left p {
+    text-align: justify;
+}
+
+.skills .skill-content .left a {
+    display: inline-block;
+    background: crimson;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+
+.skills .skill-content .left a:hover {
+    color: crimson;
+    background: none;
+}
+
+.skills .skill-content .right .bars {
+    margin-bottom: 15px;
+}
+
+.skills .skill-content .right .bars .info {
     display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.skills .skill-content .right .bars .info span {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.skills .skill-content .right .bars .line {
+    height: 5px;
+    width: 100%;
+    border-radius: 2.5px;
+    background: lightgray;
+    position: relative;
+}
+
+.skills .skill-content .right .bars .line::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-radius: 2.5px;
+    left: 0;
+    top: 0;
+    background: crimson;
+}
+
+.skills .skill-content .right .bars .html::before {
+    width: 80%;
+}
+
+.skills .skill-content .right .bars .css::before {
+    width: 80%;
+}
+
+.skills .skill-content .right .bars .js::before {
+    width: 70%;
+}
+
+.skills .skill-content .right .bars .angular::before {
+    width: 60%;
+}
+
+.skills .skill-content .right .bars .nodejs::before {
+    width: 40%;
+}
+
+.skills .skill-content .right .bars .typescript::before {
+    width: 30%;
+}
+
+.skills .skill-content .right .bars .mongo::before {
+    width: 30%;
+}
+
+/* team section styling */
+.team .title::before {
+    background: white;
+}
+
+.team .title::after {
+    content: "Who with me";
+    background: black;
+}
+
+.team {
+    background: black;
+    color: white;
+}
+
+.team .carousel .card {
+    background: #222;
+    padding: 25px 35px;
+    border-radius: 6px;
+    text-align: justify;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.team .carousel .card:hover {
+    background: crimson;
+}
+
+.team .carousel .card img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 5px solid crimson;
+    object-fit: cover;
+}
+
+.team .carousel .card:hover img {
+    border-color: white;
+}
+
+.team .carousel .card .box {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 9999;
-    cursor: pointer;
-    opacity: 0;
-    pointer-events: none;
     transition: all 0.5s ease;
-    color: white;
-    text-decoration: none;
 }
 
-.backtop i {
-    font-size: 30px;
+.team .carousel .card:hover .box {
+    transform: scale(1.05);
 }
 
-.backtop.show {
-    bottom: 30px;
-    opacity: 1;
-    pointer-events: auto;
+.team .carousel .card .text {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0;
 }
 
+.carousel .owl-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.carousel .owl-dot {
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none !important;
+    border-radius: 50%;
+    border: 2px solid crimson !important;
+    transition: all 0.3s ease;
+}
+
+.carousel .owl-dot.active {
+    width: 35px;
+    border-radius: 14px;
+}
+
+.carousel .owl-dot.active,
+.owl-dot:hover {
+    background: crimson !important;
+}
+
+
+/* contact section styling */
 .contact .title::after {
     content: "Get in touch";
 }
@@ -243,6 +616,7 @@ section .title::after {
     color: crimson;
 }
 
+/* footer section styling */
 .footer {
     background: black;
 }
@@ -259,373 +633,6 @@ section .title::after {
 .footer .content a {
     color: crimson;
     font-size: 20px;
-}
-
-/* home-section styling */
-.home {
-    background: black;
-    height: 100vh;
-    color: #fff;
-    min-height: 500px;
-    font-family: "Ubuntu", sans-serif;
-}
-
-.home .max-width {
-    height: 100%;
-}
-
-.home .home-content {
-    height: 100%;
-    align-items: center;
-}
-
-.home .home-content .column {
-    width: calc(50% - 20px);
-}
-
-.home .home-content .text-1 {
-    font-size: 27px;
-    width: 100%;
-}
-
-.home .home-content .text-2 {
-    font-size: 75px;
-    font-weight: 600;
-    margin-left: -3px;
-}
-
-.home .home-content .text-3 {
-    font-size: 40px;
-    margin: 5px 0;
-}
-
-.home .home-content .text-3 span {
-    color: crimson;
-    font-weight: 600;
-}
-
-.home .home-content a {
-    display: inline-block;
-    background: crimson;
-    color: #fff;
-    font-size: 25px;
-    padding: 12px 36px;
-    margin-top: 20px;
-    border-radius: 10px;
-    border: 2px solid crimson;
-    transition: all 0.3s ease;
-}
-
-.home .home-content a:hover {
-    color: crimson;
-    background: none;
-}
-
-/* custom-nav styling */
-.custom-nav {
-    position: fixed;
-    width: 100%;
-    padding: 30px 0;
-    /* background: black; */
-    font-family: "Ubuntu", sans-serif;
-    z-index: 999;
-    transition: all 0.3s ease;
-    margin: 0 auto;
-}
-
-/* roll là sẽ nhỏ lại thanh nav */
-.custom-nav.sticky {
-    padding: 15px 0;
-    background: crimson;
-}
-
-.custom-nav .max-width {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.custom-nav .logo a {
-    color: #fff;
-    font-size: 35px;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.custom-nav .logo a span {
-    color: crimson;
-}
-
-.custom-nav.sticky .logo a span {
-    color: #fff;
-}
-
-.custom-nav .menu {
-    margin-bottom: 0;
-}
-
-.custom-nav .menu li {
-    list-style: none;
-    display: inline-block;
-}
-
-.custom-nav .menu li a {
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    margin-left: 25px;
-    transition: color 0.3s ease;
-}
-
-.custom-nav .menu li a:hover {
-    color: crimson;
-}
-
-.custom-nav.sticky .menu li a:hover {
-    color: black;
-}
-
-/* menu btn styling */
-.menu-btn {
-    color: #fff;
-    font-size: 23px;
-    cursor: pointer;
-    display: none;
-}
-
-/* services section styling */
-.services {
-    background: black;
-    color: white;
-}
-
-.services .title::before {
-    background: white;
-}
-
-.services .title::after {
-    background: black;
-    content: "What i provide";
-}
-
-.services .serv-content .card {
-    width: calc(33% - 20px);
-    /* calc dung de set width hoac height cho div con -20px la dich sang trai 20px */
-    background: #222;
-    text-align: center;
-    border-radius: 6px;
-    padding: 20px 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    min-height: 260px;
-}
-
-.services .serv-content .card:hover {
-    background: crimson;
-}
-
-.services .serv-content .card i {
-    font-size: 50px;
-    color: crimson;
-    transition: color 0.3s ease;
-}
-
-.services .serv-content .card:hover i {
-    color: white;
-    transition: color 0.3s ease;
-}
-
-.services .serv-content .card .text {
-    font-size: 25px;
-    font-weight: 500;
-    margin: 10px 0 7px 0;
-}
-
-.services .serv-content .card:hover .box {
-    transform: scale(1.05);
-}
-
-.services .serv-content .card .box {
-    transition: all 0.3s ease;
-}
-
-.skills .title::after {
-    content: "What i know";
-}
-
-.skills .skill-content .column {
-    width: calc(50% - 30px);
-}
-
-.skills .skill-content .left .text {
-    font-size: 25px;
-    font-weight: 600;
-}
-
-.skills .skill-content .left p {
-    text-align: justify;
-}
-
-.skills .skill-content .left a {
-    display: inline-block;
-    background: crimson;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 500;
-    padding: 8px 15px;
-    margin-top: 20px;
-    border-radius: 10px;
-    border: 2px solid crimson;
-    transition: all 0.3s ease;
-}
-
-.skills .skill-content .left a:hover {
-    color: crimson;
-    background: none;
-}
-
-.skills .skill-content .right .bars {
-    margin-bottom: 15px;
-}
-
-.skills .skill-content .right .bars .info {
-    display: flex;
-    margin-bottom: 10px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.skills .skill-content .right .bars .info span {
-    font-weight: 500;
-    font-size: 18px;
-}
-
-.skills .skill-content .right .bars .line {
-    height: 5px;
-    width: 100%;
-    border-radius: 2.5px;
-    background: lightgray;
-    position: relative;
-}
-
-.skills .skill-content .right .bars .line::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    border-radius: 2.5px;
-    left: 0;
-    top: 0;
-    background: crimson;
-}
-
-.skills .skill-content .right .bars .html::before {
-    width: 80%;
-}
-
-.skills .skill-content .right .bars .css::before {
-    width: 80%;
-}
-
-.skills .skill-content .right .bars .js::before {
-    width: 70%;
-}
-
-.skills .skill-content .right .bars .angular::before {
-    width: 60%;
-}
-
-.skills .skill-content .right .bars .nodejs::before {
-    width: 40%;
-}
-
-.skills .skill-content .right .bars .typescript::before {
-    width: 30%;
-}
-
-.skills .skill-content .right .bars .mongo::before {
-    width: 30%;
-}
-
-.team .title::before {
-    background: white;
-}
-
-.team .title::after {
-    content: "Who with me";
-    background: black;
-}
-
-.team {
-    background: black;
-    color: white;
-}
-
-.team .carousel .card {
-    background: #222;
-    padding: 25px 35px;
-    border-radius: 6px;
-    text-align: justify;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.team .carousel .card:hover {
-    background: crimson;
-}
-
-.team .carousel .card img {
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    border: 5px solid crimson;
-    object-fit: cover;
-}
-
-.team .carousel .card:hover img {
-    border-color: white;
-}
-
-.team .carousel .card .box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.5s ease;
-}
-
-.team .carousel .card:hover .box {
-    transform: scale(1.05);
-}
-
-.team .carousel .card .text {
-    font-size: 25px;
-    font-weight: 500;
-    margin: 10px 0;
-}
-
-.carousel .owl-dots {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.carousel .owl-dot {
-    height: 13px;
-    width: 13px;
-    margin: 0 5px;
-    outline: none !important;
-    border-radius: 50%;
-    border: 2px solid crimson !important;
-    transition: all 0.3s ease;
-}
-
-.carousel .owl-dot.active {
-    width: 35px;
-    border-radius: 14px;
-}
-
-.carousel .owl-dot.active,
-.owl-dot:hover {
-    background: crimson !important;
 }
 
 /* reponsive media */
@@ -649,44 +656,9 @@ section .title::after {
 }
 
 @media (max-width: 947px) {
-    .about .about-content .column {
-        width: 100%;
-    }
-
-    .about .about-content .left {
-        display: flex;
-        justify-content: center;
-        margin: 25px auto;
-    }
-
-    .about .about-content .right {
-        flex: 1;
-    }
-
-    .home .home-content .text-2 {
-        font-size: 70px;
-    }
-
-    .home .home-content .text-3 {
-        font-size: 35px;
-    }
-
-    .home .home-content a {
-        font-size: 23px;
-        padding: 10px 30px;
-    }
-
     .max-width {
         padding: 0 50px;
-    }
-
-    .menu-btn {
-        display: block;
-        z-index: 999;
-    }
-
-    .menu-btn i.active:before {
-        content: "\f00d";
+        width: 100%;
     }
 
     .custom-nav .menu {
@@ -719,11 +691,43 @@ section .title::after {
         color: crimson;
     }
 
-    .max-width {
+    .menu-btn {
+        display: block;
+        z-index: 999;
+    }
+
+    .menu-btn i.active:before {
+        content: "\f00d";
+    }
+
+    .home .home-content .text-2 {
+        font-size: 70px;
+    }
+
+    .home .home-content .text-3 {
+        font-size: 35px;
+    }
+
+    .home .home-content a {
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+
+    .about .about-content .column {
         width: 100%;
     }
 
-    .services .serv-content .card {
+    .about .about-content .left {
+        display: flex;
+        justify-content: center;
+        margin: 25px auto;
+    }
+
+    .about .about-content .right {
+        flex: 1;
+    }
+
+    .ability .ability-content .card {
         width: calc(50% - 10px);
         margin-bottom: 20px;
     }
@@ -735,6 +739,14 @@ section .title::after {
 }
 
 @media (max-width: 690px) {
+    .max-width {
+        padding: 0 23px;
+    }
+
+    .custom-nav.sticky .menu li a:hover {
+        color: crimson;
+    }
+
     .home .home-content .text-2 {
         font-size: 60px;
     }
@@ -747,15 +759,7 @@ section .title::after {
         font-size: 20px;
     }
 
-    .max-width {
-        padding: 0 23px;
-    }
-
-    .custom-nav.sticky .menu li a:hover {
-        color: crimson;
-    }
-
-    .services .serv-content .card {
+    .ability .ability-content .card {
         width: calc(100%);
         margin-bottom: 20px;
     }
