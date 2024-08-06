@@ -154,9 +154,17 @@ section .title::after {
     color: crimson;
 }
 
+.custom-nav .menu li .active {
+    color: crimson;
+}
+
 .custom-nav.sticky .menu li a:hover {
     color: black;
 }
+.custom-nav.sticky .menu li .active {
+    color: black;
+}
+
 
 /* menu btn styling */
 .menu-btn {

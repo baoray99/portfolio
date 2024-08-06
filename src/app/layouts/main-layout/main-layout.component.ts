@@ -11,18 +11,35 @@ declare var Typed: any
 export class MainLayoutComponent implements OnInit, AfterViewInit {
   navbar: any
   backtop: any
+  sections: any
+  navLinks: any
+  currentSection = 'home'
   windowScroll$ = fromEvent(window, 'scroll').pipe(
     map((e: Event) => {
-      return window.scrollY > 20
+      return window.scrollY
     })
   ).subscribe((next) => {
-    if (next) {
+    if (next > 20) {
       this.navbar.classList.add('sticky')
       this.backtop.classList.add('show')
     } else {
       this.navbar.classList.remove('sticky')
       this.backtop.classList.remove('show')
     } 
+
+    this.sections.forEach((section : HTMLElement) =>{
+      if(next >= (section.offsetTop - (section.clientHeight / 3))){
+        this.currentSection = section.id
+      }
+    })
+
+    this.navLinks.forEach((nav : HTMLAnchorElement) => {
+      if(nav.href.includes(this.currentSection)){
+        document.querySelector('.active').classList.remove('active')
+        nav.classList.add('active')
+      }
+    })
+    
   })
 
   navItems = [
@@ -35,16 +52,16 @@ export class MainLayoutComponent implements OnInit, AfterViewInit {
       label: 'About'
     },
     {
-      id: '#services',
-      label: 'Services'
+      id: '#ability',
+      label: 'Ability'
     },
     {
       id: '#skills',
       label: 'Skills'
     },
     {
-      id: '#team',
-      label: 'Team'
+      id: '#project',
+      label: 'Project'
     },
     {
       id: '#contact',
@@ -124,7 +141,13 @@ export class MainLayoutComponent implements OnInit, AfterViewInit {
 
     this.navbar = document.querySelector('.custom-nav')
     this.backtop = document.querySelector('.backtop')
-
+    this.sections = document.querySelectorAll('.section')
+    this.navLinks = document.querySelectorAll('.nav_link')
+    this.navLinks.forEach((nav : HTMLAnchorElement) => {
+      if(nav.href.includes(this.currentSection)){
+        nav.classList.add('active')
+      }
+    })
   }
 
   // scrollToTop(id){
