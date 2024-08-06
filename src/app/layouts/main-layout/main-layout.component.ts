@@ -76,7 +76,7 @@ export class MainLayoutComponent implements OnInit, AfterViewInit {
       //   });
       //typing animation
       var type = new Typed(".typing", {
-        strings: ["Programmer.", "Coder.", "Designer.", "Gymmer."],
+        strings: ["Front-end Developer.", "Coder.", "Programmer.", "Gymmer."],
         typeSpeed: 150,
         backType: 120,
         loop: true,

@@ -45,7 +45,7 @@ section .title::after {
 .ability,
 .skills,
 .timeline,
-.team,
+.project,
 .contact,
 .footer {
     font-family: "Poppins", sans-serif;
@@ -432,59 +432,59 @@ section .title::after {
     width: 30%;
 }
 
-/* team section styling */
-.team .title::before {
+/* project section styling */
+.project .title::before {
     background: white;
 }
 
-.team .title::after {
-    content: "Who with me";
+.project .title::after {
+    content: "Projects I've joined";
     background: black;
 }
 
-.team {
+.project {
     background: black;
     color: white;
 }
 
-.team .carousel .card {
+.project .carousel .card {
+    min-height: 400px;
     background: #222;
     padding: 25px 35px;
     border-radius: 6px;
-    text-align: justify;
     overflow: hidden;
     transition: all 0.3s ease;
 }
 
-.team .carousel .card:hover {
+.project .carousel .card:hover {
     background: crimson;
 }
 
-.team .carousel .card img {
+.project .carousel .card img {
     height: 150px;
     width: 150px;
     border-radius: 50%;
     border: 5px solid crimson;
-    object-fit: cover;
+    object-fit: contain;
 }
 
-.team .carousel .card:hover img {
+.project .carousel .card:hover img {
     border-color: white;
 }
 
-.team .carousel .card .box {
+.project .carousel .card .box {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     transition: all 0.5s ease;
 }
 
-.team .carousel .card:hover .box {
+.project .carousel .card:hover .box {
     transform: scale(1.05);
 }
 
-.team .carousel .card .text {
+.project .carousel .card .text {
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0;
