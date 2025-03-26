@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { BookLayoutComponent } from './layouts/book-layout/book-layout.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: MainLayoutComponent,
+    component: BookLayoutComponent,
   },
   {
     path: '',
