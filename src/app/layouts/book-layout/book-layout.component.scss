@@ -37,7 +37,7 @@ section .title::after {
     bottom: -12px;
     left: 50%;
     font-size: 20px;
-    color: crimson;
+    color: $primary;
     padding: 5px;
     background: white;
     transform: translateX(-50%);
@@ -72,7 +72,7 @@ section .title::after {
     height: 45px;
     bottom: 10px;
     right: 30px;
-    background: crimson;
+    background: $primary;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -149,6 +149,7 @@ section .title::after {
     font-size: 18px;
     font-weight: 500;
     margin-left: 25px;
+    text-shadow: 2px 2px #5f4f4f;
     transition: color 0.3s ease;
 }
 
@@ -183,6 +184,7 @@ section .title::after {
     color: #fff;
     min-height: 500px;
     font-family: "Ubuntu", sans-serif;
+    background: url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGlicmFyeXxlbnwwfHwwfHx8MA%3D%3D") center center fixed no-repeat;
 }
 
 .home .max-width {
@@ -207,6 +209,10 @@ section .title::after {
     font-size: 75px;
     font-weight: 600;
     margin-left: -3px;
+    color: white;
+}
+
+.home .home-content .text-2 span {
     color: $primary;
 }
 
@@ -233,10 +239,8 @@ section .title::after {
 }
 
 .home .home-content a:hover {
-    // color: crimson;
-    // background: none;
-    opacity: 0.8;
-    transition: all 0.3s ease;
+    color: $primary;
+    background: none;
 }
 
 /* about section styling */
@@ -247,7 +251,6 @@ section .title::after {
 .about .about-content .left img {
     height: 400px;
     width: 400px;
-    object-fit: cover;
     border-radius: 15px;
 }
 
@@ -261,7 +264,7 @@ section .title::after {
 }
 
 .about .about-content .right .text-crimson {
-    color: crimson;
+    color: $primary;
 }
 
 .about .about-content .right p {
@@ -270,25 +273,25 @@ section .title::after {
 
 .about .about-content .right .btn {
     display: inline-block;
-    background: crimson;
+    background: $primary;
     color: #fff;
     font-size: 15px;
     font-weight: 500;
     padding: 10px 30px;
     margin-top: 20px;
     border-radius: 10px;
-    border: 2px solid crimson;
+    border: 2px solid $primary;
     transition: all 0.3s ease;
 }
 
 .about .about-content .right a:hover {
-    color: crimson;
+    color: $primary;
     background: none;
 }
 
 /* before after dung de chen 2 div hoac chi do do 1 cai */
 .about .title::after {
-    content: "Who am I";
+    content: "Thông tin liên hệ";
 }
 
 /* ability section styling */
@@ -303,7 +306,7 @@ section .title::after {
 
 .ability .title::after {
     background: black;
-    content: "What i have/can";
+    content: "Những gì Bookie có";
 }
 
 .ability .ability-content .card {
@@ -319,12 +322,12 @@ section .title::after {
 }
 
 .ability .ability-content .card:hover {
-    background: crimson;
+    background: $primary;
 }
 
 .ability .ability-content .card i {
     font-size: 50px;
-    color: crimson;
+    color: $primary;
     transition: color 0.3s ease;
 }
 
@@ -349,7 +352,7 @@ section .title::after {
 
 /* skills section styling */
 .skills .title::after {
-    content: "What i know";
+    content: "Tương tác trong thời gian qua";
 }
 
 .skills .skill-content .column {
@@ -367,19 +370,19 @@ section .title::after {
 
 .skills .skill-content .left a {
     display: inline-block;
-    background: crimson;
+    background: $primary;
     color: #fff;
     font-size: 15px;
     font-weight: 500;
     padding: 8px 15px;
     margin-top: 20px;
     border-radius: 10px;
-    border: 2px solid crimson;
+    border: 2px solid $primary;
     transition: all 0.3s ease;
 }
 
 .skills .skill-content .left a:hover {
-    color: crimson;
+    color: $primary;
     background: none;
 }
 
@@ -414,23 +417,23 @@ section .title::after {
     border-radius: 2.5px;
     left: 0;
     top: 0;
-    background: crimson;
+    background: $primary;
 }
 
 .skills .skill-content .right .bars .html::before {
-    width: 80%;
+    width: 100%;
 }
 
 .skills .skill-content .right .bars .css::before {
-    width: 80%;
+    width: 100%;
 }
 
 .skills .skill-content .right .bars .js::before {
-    width: 70%;
+    width: 100%;
 }
 
 .skills .skill-content .right .bars .angular::before {
-    width: 60%;
+    width: 100%;
 }
 
 .skills .skill-content .right .bars .nodejs::before {
@@ -530,8 +533,14 @@ section .title::after {
 
 
 /* contact section styling */
+.contact {
+    background: black;
+    color: white;
+}
+
 .contact .title::after {
-    content: "Get in touch";
+    content: "Hãy đến với Bookie";
+    background: black;
 }
 
 .contact .contact-content .column {
@@ -558,7 +567,7 @@ section .title::after {
 .contact .contact-content .left .down i {
     width: 80px;
     font-size: 30px;
-    color: crimson;
+    color: $primary;
 }
 
 .contact .contact-content .left .down .textt {
@@ -613,25 +622,25 @@ section .title::after {
 
 .contact .contact-content .right a {
     display: inline-block;
-    background: crimson;
+    background: $primary;
     color: #fff;
     font-size: 20px;
     font-weight: 500;
     padding: 10px 30px;
     margin-top: 20px;
     border-radius: 10px;
-    border: 2px solid crimson;
+    border: 2px solid $primary;
     transition: all 0.3s ease;
 }
 
 .contact .contact-content .right a:hover {
     background: none;
-    color: crimson;
+    color: $primary;
 }
 
 /* footer section styling */
 .footer {
-    background: black;
+    background: $background;
 }
 
 .footer .content {
@@ -644,7 +653,7 @@ section .title::after {
 }
 
 .footer .content a {
-    color: crimson;
+    color: $primary;
     font-size: 20px;
 }
 
@@ -701,7 +710,7 @@ section .title::after {
     }
 
     .custom-nav.sticky .menu li a:hover {
-        color: crimson;
+        color: $primary;
     }
 
     .menu-btn {
@@ -757,7 +766,7 @@ section .title::after {
     }
 
     .custom-nav.sticky .menu li a:hover {
-        color: crimson;
+        color: $primary;
     }
 
     .home .home-content .text-2 {

@@ -45,27 +45,27 @@ export class BookLayoutComponent implements OnInit {
   navItems = [
     {
       id: '#home',
-      label: 'Giới thiệu'
+      label: 'Trang chủ'
     },
     {
       id: '#about',
-      label: 'About'
+      label: 'Về chúng tôi'
     },
     {
       id: '#ability',
-      label: 'Ability'
+      label: 'Dịch vụ'
     },
     {
       id: '#skills',
-      label: 'Skills'
+      label: 'Truy cập'
     },
-    {
-      id: '#project',
-      label: 'Project'
-    },
+    // {
+    //   id: '#project',
+    //   label: 'Project'
+    // },
     {
       id: '#contact',
-      label: 'Contact'
+      label: 'Liên hệ'
     }
   ]
 
@@ -93,7 +93,7 @@ export class BookLayoutComponent implements OnInit {
       //   });
       //typing animation
       var type = new Typed(".typing", {
-        strings: ["Thư viện cá nhân của bạn", "Thuê sách dễ dàng", "Đọc không giới hạn"],
+        strings: ["Thư viện cá nhân của bạn.", "Thuê sách dễ dàng.", "Đọc không giới hạn."],
         typeSpeed: 150,
         backType: 120,
         loop: true,
