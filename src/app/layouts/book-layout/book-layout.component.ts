@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { fromEvent } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { HttpParams, HttpClient, HttpHeaders, HttpErrorResponse, HttpResponse, HttpRequest, HttpEvent } from '@angular/common/http';
 declare var $: any
 declare var Typed: any
 @Component({
@@ -56,8 +58,12 @@ export class BookLayoutComponent implements OnInit {
       label: 'Dịch vụ'
     },
     {
+      id: '#project',
+      label: 'Gói thành viên'
+    },
+    {
       id: '#skills',
-      label: 'Truy cập'
+      label: 'Hướng dẫn'
     },
     // {
     //   id: '#project',
@@ -69,11 +75,19 @@ export class BookLayoutComponent implements OnInit {
     }
   ]
 
+  formEmail: FormGroup
 
-
-  constructor() { }
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient
+  ) { }
 
   ngOnInit(): void {
+    this.formEmail = this.fb.group({
+      mailAddress: [''],
+      mailSubject: [''],
+      mailContent: ['']
+    })
   }
 
   ngAfterViewInit(): void {
@@ -157,4 +171,15 @@ export class BookLayoutComponent implements OnInit {
   //   }
   // }
 
+  sendMail(){
+    console.log(this.formEmail.value)
+    const data = {
+      mailAddress: this.formEmail.value.mailAddress + '@gmail.com',
+      mailSubject: this.formEmail.value.mailSubject,
+      mailContent: this.formEmail.value.mailContent
+    }
+    this.http.post('https://67e5549418194932a585977b.mockapi.io/bookie/mail/email', data).subscribe((res) => {
+      this.formEmail.reset()
+    })
+  }
 }

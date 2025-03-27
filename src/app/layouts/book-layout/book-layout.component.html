@@ -371,16 +371,19 @@
         </div>
       </div>
       <div class="column right">
-        <div class="text">Nhắn tin cho chúng tôi về</div>
-        <div class="email">
-          <input type="text" value="" placeholder="example" />
-          <input type="text" value="" readonly value="@gmail.com" />
-        </div>
-        <div class="message">
-          <input type="text" value="" placeholder="Subject" />
-        </div>
-        <textarea cols="30" rows="3">Xin chào Bookie, mình là ...</textarea>
-        <a href="#">Gửi tin nhắn</a>
+        <form [formGroup]="formEmail">
+          <div class="text">Nhắn tin cho chúng tôi về</div>
+          <div class="email">
+            <input formControlName="mailAddress" type="text" value="" placeholder="example" />
+            <input type="text" value="" readonly value="@gmail.com" />
+          </div>
+          <div class="message">
+            <input type="text" formControlName="mailSubject" value="" placeholder="Subject" />
+          </div>
+          <textarea cols="30" formControlName="mailContent" rows="3">Xin chào Bookie, mình là ...</textarea>
+        </form>
+        
+        <button type="submit" (click)="sendMail()">Gửi tin nhắn</button>
       </div>
     </div>
   </div>

@@ -679,7 +679,7 @@ section .title::after {
     padding: 20px 20px;
 }
 
-.contact .contact-content .right a {
+.contact .contact-content .right button {
     display: inline-block;
     background: $primary;
     color: #fff;
@@ -690,9 +690,10 @@ section .title::after {
     border-radius: 10px;
     border: 2px solid $primary;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.contact .contact-content .right a:hover {
+.contact .contact-content .right button:hover {
     background: none;
     color: $primary;
 }
