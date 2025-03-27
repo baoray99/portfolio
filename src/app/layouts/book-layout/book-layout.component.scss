@@ -1,5 +1,6 @@
 $primary: #f2b06d;
 $background: rgb(93, 83, 81);
+$carousel: #f4cda7;
 .max-width {
     padding: 0 80px;
     margin: auto;
@@ -351,8 +352,17 @@ section .title::after {
 }
 
 /* skills section styling */
+.skills {
+    background: white;
+    color: black;
+}
 .skills .title::after {
     content: "Tương tác trong thời gian qua";
+}
+
+.skills .title::before {
+    background: black;
+    width: 300px;
 }
 
 .skills .skill-content .column {
@@ -448,24 +458,64 @@ section .title::after {
     width: 30%;
 }
 
+.skills .skill-content .left .card-parent .card-header {
+    background: $carousel;
+}
+
+.skills .skill-content .left .card-parent .card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    height: 350px;
+}
+
+.skills .skill-content .left .card-parent .card-child {
+    margin-left: 20px;
+}
+
+.skills .skill-content .left .card-parent .card-child .card-body {
+    height: 200px;
+}
+
+.skills .skill-content .right .card-parent .card-header {
+    background: $carousel;
+}
+
+.skills .skill-content .right .card-parent .card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    height: 350px;
+}
+
+.skills .skill-content .right .card-parent .card-child {
+    margin-left: 20px;
+}
+
+.skills .skill-content .right .card-parent .card-child .card-body {
+    height: 200px;
+}
+
+
 /* project section styling */
 .project .title::before {
-    background: white;
+    background: black;
+    width: 200px;
 }
 
 .project .title::after {
-    content: "Projects I've joined";
-    background: black;
+    content: "Các ưu đãi hiện có";
+    background: white;
 }
 
 .project {
-    background: black;
-    color: white;
+    background: white;
+    color: black;
 }
 
 .project .carousel .card {
-    min-height: 400px;
-    background: #222;
+    height: 450px;
+    background: $carousel;
     padding: 25px 35px;
     border-radius: 6px;
     overflow: hidden;
@@ -473,15 +523,19 @@ section .title::after {
 }
 
 .project .carousel .card:hover {
-    background: crimson;
+    background: $primary;
 }
 
 .project .carousel .card img {
     height: 150px;
     width: 150px;
     border-radius: 50%;
-    border: 5px solid crimson;
+    border: 5px solid $primary;
     object-fit: contain;
+}
+
+.project .carousel .card h1 {
+    color: white;
 }
 
 .project .carousel .card:hover img {
@@ -491,9 +545,14 @@ section .title::after {
 .project .carousel .card .box {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     justify-content: center;
     transition: all 0.5s ease;
+}
+
+.project .carousel .card .box ul {
+    list-style: none;
+    text-align: center;
 }
 
 .project .carousel .card:hover .box {
@@ -502,7 +561,7 @@ section .title::after {
 
 .project .carousel .card .text {
     font-size: 25px;
-    font-weight: 500;
+    font-weight: 700;
     margin: 10px 0;
 }
 
